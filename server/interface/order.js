@@ -60,7 +60,7 @@ router.post('/getOrders', async ctx => {
         }
     } else {
         try {
-            let result = await Order.find() // 这不就把所有订单都搜索出来了？
+            let result = await Order.find({user: ctx.session.passport.user.email}) 
             if (result) {
                 ctx.body = {
                     code: 0,
