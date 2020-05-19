@@ -1,3 +1,5 @@
+// 服务器配置文件，所有的接口文件都要在此处注册
+
 const Koa = require('koa')
 const consola = require('consola')
 const { Nuxt, Builder } = require('nuxt')
