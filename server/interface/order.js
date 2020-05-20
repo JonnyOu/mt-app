@@ -18,14 +18,14 @@ router.post('/createOrder', async ctx => {
         }
     } else {
         let findCart = await Cart.findOne({cartNo: id})
-        //console.log(findCart)
+        // console.log(findCart)
         // console.log(findCart.detail[0].name)
         let order = new Order({
             id:orderId,
             count,
             total: count*price,
             time,
-            user: ctx.session.passport.user,
+            user: ctx.session.passport.user.email,
             name: findCart.detail[0].name,
             imgs: findCart.detail[0].imgs,
             status: 0
@@ -61,6 +61,8 @@ router.post('/getOrders', async ctx => {
     } else {
         try {
             let result = await Order.find({user: ctx.session.passport.user.email}) 
+            // console.log(result)
+            // console.log(ctx.session.passport.user)
             if (result) {
                 ctx.body = {
                     code: 0,
