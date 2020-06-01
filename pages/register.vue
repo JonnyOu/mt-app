@@ -1,10 +1,10 @@
 <template>
     <div class="page-register">
-        <article class="header">
+        <!-- <article class="header">
             <header>
                 <a href="/" class="site-logo"></a>
                 <span class="login">
-                    <em class="bold">已有美团账号?</em>
+                    <em class="bold">已有账号?</em>
                     <a href="/login">
                         <el-button type="primary" size="small">
                             登录
@@ -12,7 +12,7 @@
                     </a>
                 </span>
             </header>
-        </article>
+        </article> -->
         <section>
             <el-form :model="ruleForm" :rules="rules" ref="ruleForm">
                 <el-form-item label="昵称" prop="name">
@@ -37,8 +37,8 @@
                     <div class="error">{{ error }}</div>
                 </el-form-item>
                 <el-form-item>
-                    <a href="https://rules-center.meituan.com/rules-detail/4" target="_blank">《美团点评用户服务协议》</a>
-                    <a href="https://rules-center.meituan.com/rules-detail/2" target="_blank">《美团点评隐私政策》</a>
+                    <a href="/" target="_blank">《考拉点评用户服务协议》</a>
+                    <a href="/" target="_blank">《考拉点评隐私政策》</a>
                 </el-form-item>
             </el-form>
         </section>

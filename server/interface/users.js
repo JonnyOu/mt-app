@@ -132,11 +132,11 @@ router.post('/verify', async (ctx, next) => { // 验证路由
         user: ctx.request.body.username
     }
     
-    let mailOptions = {
+    let mailOptions = { // 邮件内容
         from: `"认证邮件" <${Email.smtp.user}>`,
         to: ko.email,
-        subject: '《毕业论文》注册码',
-        html: `您在《毕业论文》课程中注册，您的邀请码是${ko.code}`
+        subject: '注册码',
+        html: `您的邀请码是${ko.code}`
     }
     // console.log(mailOptions.html)
     await transporter.sendMail(mailOptions, (error,info) => {

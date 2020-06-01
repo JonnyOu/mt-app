@@ -1,7 +1,7 @@
 <template>
   <footer class="com-footer">
     <div class="footer-content">
-      <div class="footer-link clearfix">
+      <!-- <div class="footer-link clearfix">
         <div class="footer-column">
           <dl>
             <dt>用户帮助</dt>
@@ -230,7 +230,7 @@
               target="_blank">商家自助入驻入口</a></dt>
           </dl>
         </div>
-      </div>
+      </div> -->
       <div class="footer-copyright clearfix">
         <div class="footer-copyright-left">
           <p>©网团购 meituan.com <a href="http://www.beianbeian.com/beianxinxi/283f39a9-4c00-427a-97ef-3c7a9e1e0af1.html">京ICP证070791号</a> <a href="http://www.miitbeian.gov.cn/">京ICP备10211739号</a> <a

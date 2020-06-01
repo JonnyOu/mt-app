@@ -2,7 +2,7 @@
     <div class="search-panel">
         <el-row class="m-header-search">
             <el-col :span="3" class="left">
-                <a href="/"><img src="//s0.meituan.net/bs/fe-web-meituan/fa5f0f0/img/logo.png" alt="美团"></a>
+                <!-- <a href="/"><img src="~/assets/img/kl.png" alt="考拉"></a> -->
             </el-col>
             <el-col :span="10" class="center">
                 <div class="wrapper">
@@ -17,10 +17,10 @@
                             focus:当输入框聚焦时，执行focus方法，使得isFocus = true
                             focus:当输入框失焦时，执行focus方法，使得isFocus = false
                     -->
-                    <el-button type="primary"><i class="el-icon-search"/></el-button>
+                    <el-button type="primary" @click="searchClick"><i class="el-icon-search"/></el-button>
                     <dl class="hotPlace" v-if="isHotPlace">
                         <dt>热门搜索</dt>
-                        <dd v-for="(item, idx) in $store.state.home.hotPlace.slice(0,5)" :key="idx">
+                        <dd v-for="(item, idx) in $store.state.home.hotPlace.slice(0,4)" :key="idx">
                             <a :href="'/products?keyword='+item.name"> {{ item.name }} </a>
                         </dd>
                     </dl>
@@ -31,19 +31,19 @@
                     </dl>
                 </div>
                 <p class="suggset">
-                    <a v-for="(item, idx) in $store.state.home.hotPlace.slice(0,5)" :key="idx" :href="'/products?keyword='+item.name">
+                    <a v-for="(item, idx) in $store.state.home.hotPlace.slice(0,4)" :key="idx" :href="'/products?keyword='+item.name">
                         {{item.name}}
                     </a>
                 </p>
                 <ul class="nav">
                     <li>
-                        <nuxt-link to="/" class="takeout">美团外卖</nuxt-link>
+                        <nuxt-link to="/" class="takeout">美食外卖</nuxt-link>
                     </li>
                     <li>
                         <nuxt-link to="/" class="movie">猫眼电影</nuxt-link>
                     </li>
                     <li>
-                        <nuxt-link to="/" class="business">美团酒店</nuxt-link>
+                        <nuxt-link to="/" class="business">商家入驻</nuxt-link>
                     </li>
                     <li>
                         <nuxt-link to="/" class="appartment">名宿/公寓</nuxt-link>
@@ -90,6 +90,7 @@ export default {
                 self.isFocus = false
             }, 200)
         },
+        
         input: _.debounce(async function() {
             let self = this
             let city = self.$store.state.geo.position.city.replace('市', '')
@@ -101,7 +102,10 @@ export default {
                 }
             })
             self.searchList = top.slice(0.10)
-        },300)
+        },300),
+        searchClick: function() {
+            location.href = '/products?keyword='+this.search
+        }
     }
 }
 </script>

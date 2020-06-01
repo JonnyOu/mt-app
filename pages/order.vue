@@ -4,7 +4,7 @@
       <el-col
         :span="4"
         class="navbar">
-        <h3>我的美团</h3>
+        <h3>我的</h3>
         <dl>
           <dt>我的订单</dt>
           <dd>全部订单<i class="el-icon-arrow-right"/></dd>

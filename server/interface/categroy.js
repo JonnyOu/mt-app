@@ -1,7 +1,7 @@
 import Router from 'koa-router'
 import axios from './utils/axios'
-// import Province from '../dbs/models/province'
-// import Categroy from '../dbs/models/categroy'
+import Province from '../dbs/models/province'
+import Category from '../dbs/models/category'
 
 let router = new Router({prefix: '/categroy'})
 
@@ -26,9 +26,13 @@ router.get('/crumbs', async (ctx) => {
             city: ctx.query.city.replace('市','') || '湛江'
         }
     })
+    // console.log(types)
+    // 线上没有数据，走线下
+    // let result = await Province.find()
+    // concole.log(result)
     ctx.body = {
         areas: status===200?areas:[],
-        types: status===200?types:[]
+        types: status===200?types:[] 
     }
 })
 
